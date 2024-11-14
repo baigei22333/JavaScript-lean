@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = 20
+        function fn() {
+            // num = 10    // 局部变量来看 不允许
+            num = 10    // 局部变量来看 不允许
+        }
+
+        fn()
+        console.log(num);
+
+        //变量 访问原则是就近原则
+
+    </script>
+</body>
+
+</html>

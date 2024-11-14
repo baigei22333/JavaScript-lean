@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getSum(x, y) {
+            return x + y
+        }
+
+        // getSum(1, 2)
+
+        function fn() {
+            console.log(1);
+        }
+        function fn() {
+            console.log(2);
+        }
+
+        // 就近原则 ，哪个函数最近就是哪个函数
+        // 1. 函数名相同，后面覆盖前面
+
+        // 2. 参数不匹配
+        function fn(a, b) {
+            console.log(a + b);
+        }
+
+        fn(1, 2, 3)
+        fn(1, null, 3)
+        fn(1)
+    </script>
+</body>
+
+</html>
