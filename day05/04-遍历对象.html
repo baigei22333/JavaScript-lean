@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  for in 不推荐遍历数组
+        // let arr = ['pink', 'red', 'blue']
+
+        // for (let k in arr) {
+        //     // k 是 数组的下标 但是 是字符串 '0'
+        //     console.log(k);
+        //     console.log(arr[k]);
+        // }
+
+        // 1. 遍历对象 for in 
+        let obj = {
+            name: 'pink老师',
+            age: 18,
+            gender: '男'
+        }
+
+        // 2. 遍历对象
+        for (let key in obj) {
+            console.log(key);   // 属性名
+            console.log(obj[key]);
+
+        }
+
+
+    </script>
+</body>
+
+</html>
