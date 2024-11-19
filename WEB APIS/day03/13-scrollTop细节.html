@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.documentElement.scrollTop = 800
+        window.addEventListener('scroll', function () {
+            console.log(document.documentElement.scrollTop); // 时刻要获取最新的
+            // 得到的是数字类型 不带单位的
+            // scrollTop是可读写的
+        })
+    </script>
+</body>
+
+</html>
