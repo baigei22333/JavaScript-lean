@@ -1215,28 +1215,97 @@
     </ul>
   </div>
   <script>
-    // 获取元素
-    const elevator = document.querySelector('.xtx-elevator')
-    const entry = document.querySelector('.xtx_entry')
-    // 1. 当页面滚动大于 300 像素，就显示电梯导航
-    // 2. 给页面添加滚动事件
-    window.addEventListener('scroll', function () {
-      // 被卷去的头部大于 300
-      const n = document.documentElement.scrollTop
-      // if (n >= 300) {
-      //   elevator.style.opacity = 1
-      // } else {
-      //   elevator.style.opacity = 0
-      // }
-      elevator.style.opacity = n >= entry.offsetTop ? 1 : 0
-    })
+    // 第一大模块，页面滑动可以显示和隐藏
+    ((function () {
+      // 获取元素
+      const elevator = document.querySelector('.xtx-elevator')
+      const entry = document.querySelector('.xtx_entry')
+      // 1. 当页面滚动大于 300 像素，就显示电梯导航
+      // 2. 给页面添加滚动事件
+      window.addEventListener('scroll', function () {
+        // 被卷去的头部大于 300
+        const n = document.documentElement.scrollTop
+        // if (n >= 300) {
+        //   elevator.style.opacity = 1
+        // } else {
+        //   elevator.style.opacity = 0
+        // }
+        elevator.style.opacity = n >= entry.offsetTop ? 1 : 0
+      })
 
-    // 点击返回页面顶部
-    const backTop = document.querySelector('#backTop')
-    backTop.addEventListener('click', function () {
-      // document.documentElement.scrollTop = 0 // 一个是属性
-      window.scrollTo(0, 0) // 一个是方法 设置 x 和 y
-    })
+      // 点击返回页面顶部
+      const backTop = document.querySelector('#backTop')
+      backTop.addEventListener('click', function () {
+        // document.documentElement.scrollTop = 0 // 一个是属性
+        window.scrollTo(0, 0) // 一个是方法 设置 x 和 y
+      })
+    })());
+
+    // 第二 第三都放到另外一个执行函数里面
+    ((function () {  // 2. 点击页面可以滑动
+      const list = document.querySelector('.xtx-elevator-list')
+      list.addEventListener('click', function (e) {
+        // console.log(e);
+        if (e.target.tagName === 'A' && e.target.dataset.name) {
+          // 西安获取这个类名
+          const old = document.querySelector('.xtx-elevator-list .active')
+
+          if (old) {
+            old.classList.remove('active')
+          }
+          e.target.classList.add('active')
+
+          // 获取自定义属性
+          // console.log(e.target.dataset.name);
+
+          // 根据小盒子的自定义属性值 去选择对应的大盒子
+          // console.log(document.querySelector(`.xtx_goods_${e.target.dataset.name}`).offsetTop);
+          const top = document.querySelector(`.xtx_goods_${e.target.dataset.name}`).offsetTop
+          // 让页面滚动到对应位置
+          document.documentElement.scrollTop = top
+        }
+
+      })
+
+      // 3. 页面滚动，可以根据大盒子选小盒子添加active 类
+      window.addEventListener('scroll', function () {
+        // 3.1 先移除类 active
+        const old = document.querySelector('.xtx-elevator-list .active')
+        if (old) old.classList.remove('active')
+        // 3.2 判断页面当前滑动的位置,选择小盒子
+
+        // 获取4个大盒子位置
+        const news = document.querySelector('.xtx_goods_new')
+        const popular = document.querySelector('.xtx_goods_popular')
+        const brand = document.querySelector('.xtx_goods_brand')
+        const topic = document.querySelector('.xtx_goods_topic')
+
+        const n = document.documentElement.scrollTop
+
+
+        if (n >= news.offsetTop && n < popular.offsetTop) {
+          // 选择第一个小盒子
+          document.querySelector('[data-name=new]').classList.add('active')
+        } else if (n >= popular.offsetTop && n < brand.offsetTop) {
+          document.querySelector('[data-name=popular]').classList.add('active')
+        } else if (n >= brand.offsetTop && n < topic.offsetTop) {
+          document.querySelector('[data-name=brand]').classList.add('active')
+        } else if (n >= topic.offsetTop) {
+          document.querySelector('[data-name=topic]').classList.add('active')
+        }
+      })
+
+
+
+
+
+
+
+
+
+
+    })())
+
   </script>
 </body>
 
