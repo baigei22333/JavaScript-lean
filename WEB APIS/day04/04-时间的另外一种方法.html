@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 40px;
+            border: 1px solid pink;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        const div = document.querySelector('div')
+        const date = new Date()
+        div.innerHTML = date.toLocaleString()   // 2224/11/21 21:55:00
+
+        div.innerHTML = date.toLocaleDateString()  // 2224/11/21
+
+        div.innerHTML = date.toLocaleTimeString() // 21:55:00
+
+
+
+    </script>
+</body>
+
+</html>
