@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            margin: 200px auto;
+            width: 800px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: pink;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            background-color: #929292;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        我是广告1
+        <div class="close">X</div>
+    </div>
+
+    <div class="box">
+        我是广告2
+        <div class="close">X</div>
+    </div>
+
+    <div class="box">
+        我是广告3
+        <div class="close">X</div>
+    </div>
+    <script>
+        // // 1. 获取事件源
+        // const cls = document.querySelector('.close')
+
+        // // 2. 事件侦听
+        // cls.addEventListener('click', function () {
+        //     this.parentNode.style.display = 'none'
+        // })
+
+        // 1. 获取三个关闭按钮
+        const closeBtn = document.querySelectorAll('.close')
+        for (let i = 0; i < closeBtn.length; i++) {
+            closeBtn[i].addEventListener('click', function () {
+                this.parentNode.style.display = 'none'
+            })
+        }
+    </script>
+</body>
+
+</html>
