@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 元字符
+        // console.log(/哈/.test('哈'));
+        // console.log(/哈/.test('哈哈'));
+        // console.log(/哈/.test('二哈'));
+        // // 1. 边界符 /
+        // // ^ 表示以 X 开头
+        // console.log(/^哈/.test('哈')); // true
+        // console.log(/^哈/.test('哈哈')); // true
+        // console.log(/^哈/.test('二哈')); // false
+        // console.log('------------------');
+
+        // // $ 表示以 X 结尾
+        // console.log(/^哈$/.test('哈')); // true
+        // console.log(/^哈$/.test('哈哈')); // false
+        // console.log(/^哈$/.test('二哈')); // false
+        console.log('------------------');
+        // 以 ^ 开偷 以 $ 结尾 表示精确匹配
+
+        // 2. 量词 * 表示0次或者多次 + 表示1次或者更多次 ? 表示0次或者1次
+        // 类似 >= 0
+        // console.log(/^哈*$/.test('哈'));  // true
+        // console.log(/^哈*$/.test(''));  // true
+        // console.log(/^哈*$/.test('哈哈')); // true
+        // console.log('------------------');
+
+        // // 类似 >= 1
+        // console.log(/^哈+$/.test('哈'));  // true
+        // console.log(/^哈+$/.test(''));  // false
+        // console.log(/^哈+$/.test('哈哈')); // true
+        // console.log('------------------');
+
+        // // 类似  0 || 1
+        // console.log(/^哈?$/.test('哈'));  // true
+        // console.log(/^哈?$/.test(''));  // true
+        // console.log(/^哈?$/.test('哈哈')); // false
+        // console.log('------------------');
+
+        // {n} 重复n次
+        // console.log(/^哈{4}$/.test('哈哈')); // false
+        // console.log(/^哈{4}$/.test('哈哈哈')); // false
+        // console.log(/^哈{4}$/.test('哈哈哈哈')); // true
+        // console.log(/^哈{4}$/.test('哈哈哈哈哈')); // false
+        // console.log(/^哈{4}$/.test('哈哈哈哈哈哈')); // false
+        // console.log('------------------');
+
+        // // {n,} 重复n次或者更多
+
+        // console.log(/^哈{4,}$/.test('哈哈')); // false
+        // console.log(/^哈{4,}$/.test('哈哈哈')); // false
+        // console.log(/^哈{4,}$/.test('哈哈哈哈')); // true
+        // console.log(/^哈{4,}$/.test('哈哈哈哈哈')); // true
+        // console.log(/^哈{4,}$/.test('哈哈哈哈哈哈')); // true
+        // console.log('------------------');
+        // // {n,m}  重复n~m次
+        // console.log(/^哈{4,5}$/.test('哈哈')); // false
+        // console.log(/^哈{4,5}$/.test('哈哈哈')); // false
+        // console.log(/^哈{4,5}$/.test('哈哈哈哈')); // true
+        // console.log(/^哈{4,5}$/.test('哈哈哈哈哈')); // true
+        // console.log(/^哈{4,5}$/.test('哈哈哈哈哈哈')); // false
+        // console.log('------------------');
+
+
+        // 字符类
+        // [] 只要包含任何一个即可
+        // [abc] 出现1次即可
+        console.log(/^[abc]$/.test('a')); // true
+        console.log(/^[abc]$/.test('b')); // true
+        console.log(/^[abc]$/.test('c')); // true
+        console.log(/^[abc]$/.test('ab')); // false
+        console.log(/^[abc]{2}$/.test('ab')); // true
+
+        // [a-z] 表示 a~z 
+        console.log(/^[a-z]$/.test('m')); // true
+        console.log(/^[A-Z]$/.test('m')); // false
+        console.log(/^[A-Z]$/.test('M')); // true
+        console.log(/^[0-9]$/.test('2')); // true
+        console.log(/^[a-zA-Z0-9]$/.test('2')); // true
+
+        // qq号 10000开始往后排
+        /^[1-9][0-9]{4,}$/
+
+        // [^] 表示取反 除了
+        // . 表示除了换行符之外的任何单个字符
+
+        // [a-z] 取 a-z 任意一个
+        // [^a-z] 取 除了 a-z 任意一个
+
+    </script>
+</body>
+
+</html>
