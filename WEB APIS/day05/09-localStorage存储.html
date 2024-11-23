@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 要存储一个名字，uname pink老师
+        // localStorage.setItem(键, 值)
+        localStorage.setItem('uname', 'pink老师')
+
+        // 2. 获取方式 都加引号
+        console.log(localStorage.getItem('uname'));
+
+        // 3. 删除本地存储
+        // localStorage.removeItem('uname')
+
+        // 4. 改 如果原来有这个键 则是改
+        localStorage.setItem('uname', 'red老师')
+
+        // 本地存储只能存储字符串类型,需要手动转换
+        // 要存储一个年龄
+        localStorage.setItem('age', 18)
+        console.log(localStorage.getItem('age'));
+
+
+        // sessionStorage 同理 生命周期是一个网页 网页关闭就没了
+        // localStorage 永久存储，不删除不会没
+
+    </script>
+</body>
+
+</html>

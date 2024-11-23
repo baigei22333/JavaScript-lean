@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = ['red', 'green', 'blue']
+        // 1. 数组map方法
+        const newArr = arr.map(function (ele, index) {
+            console.log(ele);
+            console.log(index);
+            return ele + '颜色'
+        })
+
+        console.log(newArr);
+
+
+        // 2. 数组join 方法 把数组转换为字符串
+        console.log(newArr.join()); // 括号为空 默认是,分隔
+        console.log(newArr.join('')); // 写什么就用什么分隔
+        
+
+    </script>
+</body>
+
+</html>
