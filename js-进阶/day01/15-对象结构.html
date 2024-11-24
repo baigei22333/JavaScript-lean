@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象结构
+        // const uname = 'red老师'
+        // const obj = {
+        //     uname: 'pink',
+        //     age: 18
+        // }
+        // 解构语法 变量名字和属性名字必须一致
+        // const { uname, age } = { uname: 'pink', age: 1 }
+
+        // 1. 对象结构的变量名可以重新改名 旧变量名:新变量名
+        // const { uname: username, age } = { uname: 'pink', age: 1 }
+        // console.log(username);
+
+        // 2. 结构数组对象
+        const pig = [{
+            uname: '佩奇', age: 6
+        }]
+
+        const [{ uname, age }] = pig
+    </script>
+</body>
+
+</html>

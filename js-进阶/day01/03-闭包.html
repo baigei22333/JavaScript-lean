@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function outer() {
+        //     let a = 10
+        //     function fn() {
+        //         console.log(a);
+        //     }
+
+        //     fn()
+        // }
+        // outer()
+        // 产生了闭包
+        // 内层函数调用了外层函数的变量 就产生了闭包
+        // 作用 封闭数据，提供操作，外部也可以访问内部数据
+        // 闭包作用 实现内部数据私有
+
+        // 普通形式
+        // let i = 0
+        // function fn() {
+        //     i++
+        //     console.log(i);
+
+        // }
+
+        // 因为 i 是全局变量，容易被修改
+
+        // 闭包形式
+        function count() {
+            let i = 0
+            function fn() {
+                i++
+                console.log(i);
+
+            }
+
+            return fn
+        }
+
+        const fun = count()
+        // 会造成内存泄漏
+        fun()
+        fun()
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const fn = function () {
+        //     console.log(123);
+        // }
+
+        // 箭头函数
+        // 1. 基本语法
+        // const fn = () => {
+        //     console.log(123);
+
+        // }
+
+
+        // const fn = (x) => {
+        //     console.log(x);
+
+        // }
+        // 2.只有一个形参的时候可以省略小括号
+        // const fn = x => {
+        //     console.log(x);
+        // }
+
+
+        // 3. 只有一行代码的时候，我门可以省略大括号
+        // const fn = x => console.log(x);
+
+        // const fn = x => {
+        //     return x + x
+        // }
+
+        // 如果在一行里面可以省略return
+        // const fn = x => x + x
+        // console.log(fn(1));
+
+
+        // const fn = (uname) => {
+        //     return {uname:uname}
+        // }
+
+        // 5. 箭头函数可以直接返回一个对象 因为 {} 与 函数的 {} 冲突 所以使用() 包起来
+        // const fn = (uname) => ({ uname: uname })
+        const fn = uname => ({ uname: uname })
+        console.log(fn('刘德华'));
+
+    </script>
+</body>
+
+</html>
