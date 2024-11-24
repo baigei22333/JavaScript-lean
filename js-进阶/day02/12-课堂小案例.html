@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        const gift = '50g的茶叶,清洗球'
+        // // 1. 把字符串拆分成数组
+        // const arr = gift.split(',')
+        // // 2. 根据数组元素生成对应的span
+
+        // const newArr = arr.map(function (item) {
+        //     return `<span>【赠品】${item}</span>`
+        // })
+        // const str = newArr.join('')
+        // document.querySelector('div').innerHTML = str
+
+        document.querySelector('div').innerHTML = gift.split(',').map(i => `<span>【赠品】${i}</span>`).join('')
+    </script>
+</body>
+
+</html>
