@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = { age: 18 }
+        function fn(x, y) {
+            console.log(this);
+            console.log(x, y);
+
+
+        }
+        // 1. 调用函数
+        // 2. 改变this指向 
+        // 3. 参数必须以数组的方式来传递
+        // 4. 返回值 本身就是在调用函数，所以返回值就是原先函数的返回值
+        fn.apply()
+        fn.apply(obj, [1, 2])
+
+        // 使用场景：求数组运算符
+        console.log(Math.max(1, 2, 3));
+        console.log(Math.max.apply(null, [1, 2, 3]));
+        console.log(Math.max.apply(Math, [1, 2, 3]));
+
+
+    </script>
+</body>
+
+</html>
