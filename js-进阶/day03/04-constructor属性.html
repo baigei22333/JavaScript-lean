@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  constructor 单词 构造器
+
+        function Star() {
+
+        }
+        // Star.prototype.sing = function () {
+        //     console.log('唱歌');
+        // }
+        // Star.prototype.dance = function () {
+        //     console.log('跳舞');
+        // }
+
+        Star.prototype = {
+            // 从新指回创造这个原型对象的 构造函数
+            constructor: Star,
+            sing: function () {
+                console.log('唱歌');
+            },
+            dance: function () {
+                console.log('跳舞');
+            }
+        }
+        // const ldh = new Star()
+        // console.log(Star.prototype);
+
+        // // 原型的一个属性 是 构造函数
+        // console.log(Star.prototype.constructor === Star);
+
+        console.log(Star.prototype);
+
+
+    </script>
+</body>
+
+</html>
